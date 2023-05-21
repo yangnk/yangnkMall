@@ -1,4 +1,4 @@
-package com.yangnk.order.controller;
+package com.yangnk.order.myTest;
 
 import com.yangnk.order.api.UniqIdApi;
 import lombok.extern.slf4j.Slf4j;
@@ -16,9 +16,9 @@ public class MyTestController {
 
     @RequestMapping(value = "/test/{key}")
     String test(@PathVariable("key") String key) {
-        String city = uniqIdApi.getSegmentId("city");
+        String city = uniqIdApi.getSegmentId(key);
 
-        log.info(">>>>>>>>>", city);
+        log.info(">>>>>>>>>", key);
         return city;
     }
 
