@@ -6,4 +6,7 @@ import com.yangnk.order.domain.OrderParam;
 public interface OmsOrderService {
 
     CommonResult generateOrder(OrderParam orderParam, Long memberId);
+
+    CommonResult addOrder();
+
 }

@@ -17,6 +17,12 @@
     </properties>
     <dependencies>
 
+        <!--seata-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
             <!--todo 将子项目中依赖整理到父项目依赖中-->
 
         <!--springboot tools start-->

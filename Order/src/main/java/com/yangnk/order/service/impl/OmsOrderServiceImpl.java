@@ -6,9 +6,12 @@ import com.yangnk.order.common.ResultCode;
 import com.yangnk.order.domain.OrderParam;
 import com.yangnk.order.mapper.OmsOrderItemMapper;
 import com.yangnk.order.mapper.OmsOrderMapper;
+import com.yangnk.order.mapper.UserMapper;
 import com.yangnk.order.model.OmsOrder;
 import com.yangnk.order.model.OmsOrderItem;
+import com.yangnk.order.model.User;
 import com.yangnk.order.service.OmsOrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,28 @@ public class OmsOrderServiceImpl implements OmsOrderService {
 
     @Autowired
     OmsOrderItemMapper omsOrderItemMapper;
+
+
+    @Autowired
+    UserMapper userMapper;
+
+
+    @Override
+    @GlobalTransactional
+    public CommonResult addOrder() {
+//        OmsOrder omsOrder = new OmsOrder();
+//        omsOrder.setMemberId(1L);
+//        omsOrder.setId(2L);
+//
+//        omsOrderMapper.insert(omsOrder);
+
+        User user = new User();
+        user.setId(1);
+        user.setName("tom");
+//        userMapper.insert(user);
+        userMapper.insert1(1, "tom");
+        return CommonResult.success("add Order success");
+    }
 
     @Override
     @Transactional

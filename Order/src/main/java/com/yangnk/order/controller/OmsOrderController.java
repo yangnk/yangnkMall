@@ -20,4 +20,9 @@ public class OmsOrderController {
                                       @RequestHeader("memberId") Long memberId) {
         return omsOrderService.generateOrder(orderParam, memberId);
     }
+
+    @RequestMapping(value = "/insertOrder", method = RequestMethod.POST)
+    public CommonResult insertOrder() {
+        return omsOrderService.addOrder();
+    }
 }
